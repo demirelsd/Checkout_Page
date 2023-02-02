@@ -11,34 +11,13 @@ let subTotal = +document.getElementById("cart-subtotal").lastElementChild.innerH
 const productDiv = document.querySelectorAll(".product");
  const productLinePriceDivs = document.querySelectorAll(".product-line-price");
 
-let quantity, name,productPrice,productTotal;
-let productsList=[
-    {
-        name:'Vintage Backbag',
-        quantity:quantity || 1,
-        productPrice:25.98,
-        productTotal: productTotal || 25.98
-    },
-    {
-        name:'Levi Shoes',
-        quantity:quantity || 1,
-        productPrice:45.99,
-        productTotal:productTotal || 45.99
-    },
-    {
-        name:'Antique Clock',
-        quantity:quantity || 1,
-        productPrice:74.99,
-        productTotal:productTotal || 74.99
-    }
-]
+let quantity,productPrice,productTotal;
+
 
 window.onload=()=>{
    changeSum();
 }
-products.onclick =(e)=>{ 
-     //    productPrice = +e.target.closest(".quantity-controller")
-//      .previousElementSibling.firstElementChild.firstChild.innerHTML;     
+products.onclick =(e)=>{     
 productPrice = +e.target
   .closest(".product-info")
   .querySelector("div.product-price strong").innerText;
@@ -95,7 +74,7 @@ function decrease (e){
  
 }
  function removeItem(e){
-    // e.target.closest('.product').style.display = 'none'
+  
      e.target.closest(".product").remove();
  }
 
@@ -108,5 +87,5 @@ console.log(quantity);
       productPrice: productPrice,
     })
   ); 
-  console.log(productsList);
+  
 
